@@ -1,0 +1,14 @@
+version: "2"
+options:
+  compose-file-path: './docker-compose.yml'
+  compose-dev-file-path: './docker-compose-sync.yml'
+  verbose: true # make the whole sync verbose
+syncs:
+  ${COMPOSE_PROJECT_NAME}-sync:
+    notify_terminal: true
+    unison_image: "eugenmayer/unison:2.51.3-4.12.0-ARM64"
+    src: "./www"
+    watch_args: '-v'
+    sync_strategy: 'unison'
+    sync_userid: '33'
+    sync_excludes: ['.idea', '.git', '.gitignore', 'tmp', '.vscode', 'redgit', '.jch', '.sql']
