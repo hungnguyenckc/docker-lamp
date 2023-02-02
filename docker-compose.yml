@@ -5,6 +5,7 @@ services:
     build:
       context: ./bin/${PHPVERSION}
     container_name: "${COMPOSE_PROJECT_NAME}-${PHPVERSION}"
+    platform: linux/x86_64 #Fix bug for macOS
     restart: "always"
     ports:
       - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"

@@ -11,4 +11,4 @@ syncs:
     watch_args: '-v'
     sync_strategy: 'unison'
     sync_userid: '33'
-    sync_excludes: ['.idea', '.git', '.gitignore', 'tmp', '.vscode', 'redgit', '.jch', '.sql']
+    sync_excludes: ['.idea', '.git', '.gitignore', 'tmp', '.vscode', '.sql']
