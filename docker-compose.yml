@@ -73,3 +73,14 @@ services:
     image: redis:latest
     ports:
       - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
+
+  mongodb:
+    image: mongo:5.0
+    container_name: "${COMPOSE_PROJECT_NAME}-mongodb"
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
