@@ -34,7 +34,7 @@ services:
   database:
     build:
       context: "./bin/${DATABASE}"
-    container_name: "${COMPOSE_PROJECT_NAME}-${DATABASE}"
+    container_name: "${COMPOSE_PROJECT_NAME}-mysql"
 #    platform: linux/x86_64 #Fix bug for macOS
     restart: "always"
     ports:
